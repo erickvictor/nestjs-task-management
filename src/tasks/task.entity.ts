@@ -24,6 +24,9 @@ export class Task extends BaseEntity {
   status: TaskStatus;
 
   // eslint-disable-next-line prettier/prettier
-  @ManyToOne(type => User, (user) => user.tasks, { eager: false })
+  @ManyToOne(type => User, user => user.tasks, { eager: false })
   user: User;
+
+  @Column()
+  userId: number;
 }
